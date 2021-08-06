@@ -257,7 +257,7 @@ def build_conda_docker(conda_store, build):
         docker_config_history = schema.DockerConfigHistory()
         docker_config.history.append(docker_config_history)
 
-        docker_config.rootfs.diff_ids.append(f"sha256:{content_uncompressed_hash}")
+        odocker_config.rootfs.diff_ids.append(f"sha256:{content_uncompressed_hash}")
 
     docker_config_content = docker_config.json().encode("utf-8")
     docker_config_hash = hashlib.sha256(docker_config_content).hexdigest()
